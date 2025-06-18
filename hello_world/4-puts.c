@@ -1,10 +1,9 @@
 #include <stdio.h>
 
 /**
- * First C file oooooh
- * 
- */
-
+  * First C file oooooh
+  * 
+  */
 
 int main(void)
 {
