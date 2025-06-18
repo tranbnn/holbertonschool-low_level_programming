@@ -1,4 +1,4 @@
-#include <stdio.hii>
+#include <stdio.h>
 /**
  *main - to print out string to stdout
  *return: 0 if success. 
