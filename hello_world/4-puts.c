@@ -1,8 +1,7 @@
 #include <stdio.h>
 
 /**
-  * First C file oooooh
-  * 
+  * first c file ooooh
   */
 
 int main(void)
