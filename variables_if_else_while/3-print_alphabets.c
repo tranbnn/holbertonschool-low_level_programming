@@ -1,15 +1,14 @@
 #include <stdio.h>
 
 /**
- * Description: main - prints out the alphabet in lowercase, and then uppercase to stout
+ * Description: main - prints out the alphabet in lowercase,
+ * and then uppercase to stout
  * Return: 0 if success
  */
-
 int main(void)
 {
 char lower;
 char upper;
-
 	for (lower = 'a'; lower <= 'z'; lower++)
 	       putchar(lower);
 
