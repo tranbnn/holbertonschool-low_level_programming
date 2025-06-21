@@ -2,20 +2,21 @@
 
 /**
  * Description: main - prints out the alphabet in lowercase,
- * and then uppercase to stout
+ * and then uppercase to stdout
  * Return: 0 if success
  */
 int main(void)
 {
-char lower;
-char upper;
-for (lower = 'a'; lower <= 'z'; lower++)
-	       putchar(lower);
+    char lower;
+    char upper;
 
-	for (upper = 'A'; upper <= 'Z'; upper++)
-		putchar(upper);
+    for (lower = 'a'; lower <= 'z'; lower++)
+        putchar(lower);
 
-	putchar('\n');
+    for (upper = 'A'; upper <= 'Z'; upper++)
+        putchar(upper);
 
-	return (0);
+    putchar('\n');
+
+    return (0);
 }
