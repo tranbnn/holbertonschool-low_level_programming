@@ -3,7 +3,7 @@
 #include <stdio.h>
 /**
  * Description: main -  prints a random number and says
- * whether it is positive, negative, or zero
+ * whether iit is positive, negative, or zero
  *
  * Return: 0 if success
  */
@@ -24,6 +24,6 @@ int main(void)
 	{
 		printf("%d is negative\n", n);
 	}
-	
+
 	return (0);
 }
