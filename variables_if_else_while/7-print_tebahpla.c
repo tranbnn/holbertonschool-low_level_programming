@@ -3,7 +3,7 @@
  * Description: main - prints alphabet in reverse and lowercase
  * Return: 0 if success
  */
-int main (void)
+int main(void)
 {
 	char letter;
 
