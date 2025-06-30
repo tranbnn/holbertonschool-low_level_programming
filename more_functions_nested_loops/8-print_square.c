@@ -5,7 +5,7 @@
  */
 void print_square(int size)
 {
-	int sq;
+	int x, y;
 
 	if (size <= 0)
 	{
@@ -13,9 +13,12 @@ void print_square(int size)
 	}
 	else
 	{
-		for (sq = 1; sq <= size; ++sq)
+		for (x = 0; x < size; ++x)
 		{
-			_putchar('#');
+			for (y = 0; y < size; y++)
+			{
+				_putchar('#');
+			}
 		}
 		_putchar('\n');
 	}
