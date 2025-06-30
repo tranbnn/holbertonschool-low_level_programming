@@ -6,12 +6,17 @@ void more_numbers(void)
 {
 	int times, n;
 
-	for (times = 1; times <= 10; times++)
+	for (times = 1; times <= 10; ++times)
 	{
 		for (n = 0; n <= 14; ++times)
 		{
-			_putchar(n);
+			if (n > 9)
+			{
+				_putchar((n / 10) + '0');
+			}
+
+			_putchar((n % 10) + '0');
 		}
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
