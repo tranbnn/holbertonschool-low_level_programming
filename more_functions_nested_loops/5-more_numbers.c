@@ -6,9 +6,9 @@ void more_numbers(void)
 {
 	int times, n;
 
-	for (times = 0; times <= 10; times++)
+	for (times = 0; times < 10; times++)
 	{
-		for (n = 0; n <= 14; times++)
+		for (n = 0; n < 14; n++)
 		{
 			if (n >= 10)
 			{
