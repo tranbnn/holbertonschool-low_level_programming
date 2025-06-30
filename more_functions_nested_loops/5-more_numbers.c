@@ -4,11 +4,11 @@
  */
 void more_numbers(void)
 {
-	int times, n;
+	int times;
 
 	for (times = 1; times <= 10; times++)
 	{
-		for(n = 0; n <= 14; n++)
+		printf("01234567891011121314");
 		{
 			if (times >=10)
 			{
