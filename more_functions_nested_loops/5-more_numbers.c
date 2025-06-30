@@ -4,8 +4,7 @@
  */
 void more_numbers(void)
 {
-	int n;
-	int times;
+	int times, n;
 
 	for (times = 0; times <= 10; times++)
 	{
@@ -13,7 +12,7 @@ void more_numbers(void)
 		{
 			_putchar(n + '0');
 		}
-		_putchar(times);
+		_putchar(n);
 	}
 	_putchar('\n');
 }
