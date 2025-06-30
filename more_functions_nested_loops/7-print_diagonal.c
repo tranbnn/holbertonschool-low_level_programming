@@ -5,19 +5,27 @@
  */
 void print_diagonal(int n)
 {
-	int m;
-
 	if (n <= 0)
 	{
 		_putchar('\n');
 	}
 	else
 	{
-		for (m = 1; m <= n; ++m)
+		int l, d;
+
+		for  (l = 0; l < n; l++)
 		{
-			_putchar('\');
+			for (d = 0; d < n; d++)
+			{
+				if (d == l)
+				{
+					_putchar('\\');
+				}
+				else if (d < l)
+				{
+					_putchar(' ');
+				}
+			}
 		}
-		_putchar('\n');
 	}
 }
-
