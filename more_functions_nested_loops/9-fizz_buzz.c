@@ -1,7 +1,7 @@
 #include "main.h"
 #include "stdio.h"
 /**
- * Description: main - prints numbers from 1 to 100 
+ * Description: main - prints numbers from 1 to 100
  * multiples of three print Fizz, and multiples of five print Buzz.
  * Numbers that are multiple of both three and five print FizzbBuzz.
  * Return: 0 if success
@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	int num; 
+	int num;
 
 	for (num = 1; num <= 100; ++num)
 	{
@@ -39,7 +39,7 @@ int main(void)
 			printf("\n");
 		}
 	}
-	
+
 	return (0);
 }
 
