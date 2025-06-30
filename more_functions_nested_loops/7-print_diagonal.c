@@ -17,7 +17,7 @@ void print_diagonal(int n)
 		{
 			for (space = 1; space <= spot; ++space)
 			{
-				if ( space == spot)
+				if (space == spot)
 				{	_putchar('\\');
 				}
 				else if (space < spot)
