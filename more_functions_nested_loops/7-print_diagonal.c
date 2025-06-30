@@ -17,9 +17,14 @@ void print_diagonal(int n)
 		{
 			for (space = 1; space <= spot; ++space)
 			{
-				_putchar(' ');
+				if ( space == spot)
+				{	_putchar('\\');
+				}
+				else if (space < spot)
+				{
+					_putchar(' ');
+				}
 			}
-			/*_putchar(92);*/
 			_putchar('\n');
 		}
 	}
