@@ -1,0 +1,8 @@
+#include "main.h"
+/**
+ * Description: _puts - prints a string to stdout
+ */
+void _puts(char *str)
+{
+	printf("\n%d", *str);
+}
