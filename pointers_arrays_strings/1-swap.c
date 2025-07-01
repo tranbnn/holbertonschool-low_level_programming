@@ -6,5 +6,5 @@
  */
 void swap_int(int *a, int *b)
 {
-	printf("a = %d, b = %d\n", *a, *b);
+	printf("a = %d, b = %d\n", *b, *a);
 }
