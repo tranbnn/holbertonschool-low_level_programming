@@ -4,5 +4,5 @@
  */
 void _puts(char *str)
 {
-	printf("\n%d", *str);
+	_putchar(*str);
 }
