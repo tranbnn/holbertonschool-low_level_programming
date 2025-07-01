@@ -2,6 +2,7 @@
 /**
  * Description: _strlen - returns the length of the string
  * @s: char that represents the length of a string
+ * Return: e or length of the string
  */
 int _strlen(char *s)
 {
