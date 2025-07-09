@@ -13,7 +13,7 @@ unsigned int _strspn(char *s, char *accept)
 	int j;
 	unsigned int byte;
 
-	i = 0; 
+	i = 0;
 	byte = 0;
 
 	while (s[i] != '\0')
@@ -35,6 +35,6 @@ unsigned int _strspn(char *s, char *accept)
 		i = i + 1;
 	}
 
-	return byte; 
+	return (byte);
 
 }
