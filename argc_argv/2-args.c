@@ -8,9 +8,11 @@
 
 int main(int argc, char *argv[])
 {
-	int i = 0;
+	int i;
 	
-	while (i <= argc)
+	i = 0;
+
+	while (argv[i] != argv[argc])
 	{
 		printf("%s\n", argv[i]);
 		argc++;
