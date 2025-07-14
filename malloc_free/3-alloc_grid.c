@@ -3,7 +3,8 @@
 #include <stdio.h>
 
 /**
- * Description: returns a pointer to a 2 dimensional array of integers
+ * Description: alloc_grid - returns a pointer to a 2
+ * dimensional array of integers
  * @width: width
  * @height: height
  * Return: NULL
@@ -20,7 +21,6 @@ int **alloc_grid(int width, int height)
 	}
 
 	array = malloc(sizeof(int *) * height);
-
 	if (array == NULL)
 	{
 		return (NULL);
@@ -31,11 +31,9 @@ int **alloc_grid(int width, int height)
 	while (i < height)
 	{
 		array[i] = malloc(sizeof(int) * width);
-		
 		if (array[i] == NULL)
 		{
 			j = 0;
-			
 			while (j < i)
 			{
 				free(array[j]);
@@ -45,7 +43,6 @@ int **alloc_grid(int width, int height)
 			return (NULL);
 		}
 		j = 0;
-
 		while (j < width)
 		{
 			array[i][j] = 0;
