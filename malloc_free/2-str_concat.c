@@ -36,14 +36,12 @@ char *str_concat(char *s1, char *s2)
 	{
 		s1 = "";
 	}
-
 	if (s2 == NULL)
 	{
 		s2 = "";
 	}
 
 	concat = malloc(str_len(s1) + str_len(s2) + 1);
-
 	i = 0;
 	j = 0;
 	k = 0;
