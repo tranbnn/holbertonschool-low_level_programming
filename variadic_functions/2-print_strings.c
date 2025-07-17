@@ -20,7 +20,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	while (i < n)
 	{
 		str = va_arg(args, char*);
-		printf("%s", str);
 
 		if (str == NULL)
 		{
