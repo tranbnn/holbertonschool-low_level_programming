@@ -38,7 +38,7 @@ void print_a_float(va_list args)
 
 /**
  * Description: print_a_str - prints a string
- * @arg: variable arguments
+ * @args: variable arguments
  * Return: void
  */
 
