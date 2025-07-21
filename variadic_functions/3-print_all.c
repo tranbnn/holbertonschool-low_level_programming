@@ -63,6 +63,8 @@ void print_all(const char * const format, ...)
 	int i;
 	int j;
 	va_list args;
+	char *separator = "";
+
 	types format_types[] = {
 		{"c", print_a_char},
 		{"i", print_an_int},
@@ -82,11 +84,10 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == *format_types[j].identifier)
 			{
+				printf("%s", separator);
 				format_types[j].f(args);
-				if (format[i] != '\0')
-				{
-					printf(", ");
-				}
+				separator = ", ";
+				break;
 			}
 			
 		j++;
