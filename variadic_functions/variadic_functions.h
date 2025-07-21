@@ -14,4 +14,14 @@ void print_an_int(va_list args);
 void print_a_float(va_list args);
 void print_a_str(va_list args);
 
+/**
+ * Description: 
+ */
+
+typedef struct types
+{
+	char *identifier;
+	void (*f)(va_list args);
+} types;
+
 #endif
