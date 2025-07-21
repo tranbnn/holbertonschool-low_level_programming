@@ -1,4 +1,6 @@
 #include "variadic_functions.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * Description: print_a_char - prints char types
@@ -9,7 +11,7 @@
 
 void print_a_char(va_list args)
 {
-	printf("%c", va_args(args, int));
+	printf("%c", va_arg(args, int));
 }
 
 /**
@@ -20,7 +22,7 @@ void print_a_char(va_list args)
 
 void print_an_int(va_list args)
 {
-	printf("%i", va_args(args, int));
+	printf("%i", va_arg(args, int));
 }
 
 /**
@@ -31,7 +33,7 @@ void print_an_int(va_list args)
 
 void print_a_float(va_list args)
 {
-	printf("%f", va_args(args, double));
+	printf("%f", va_arg(args, double));
 }
 
 /**
@@ -65,12 +67,39 @@ void print_a_str(va_list args)
 void print_all(const char * const format, ...)
 {
 	int i;
+	int j;
 	va_list args;
+	types format_types[] = {
+		{"c", print_a_char},
+		{"i", print_an_int},
+		{"f", print_a_float},
+		{"s", print_a_str}
+	};
 
 	va_start(args, format);
 
 	i = 0;
-	
+
+	while (format != NULL && format[i])
+	{
+		j = 0;
+
+		while (j < 4)
+		{
+			if (format[i] == *format_types[j].identifier)
+			{
+				format_types[j].f(args);
+				if (format[i] != '\0')
+				{
+					printf(", ");
+				}
+			}
+			
+		j++;
+		}
+	i++;
+	}
+
 	va_end(args);
-	print('\n');
+	printf("\n");
 }
