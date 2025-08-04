@@ -10,9 +10,9 @@ int main(int argc, char *argv[])
 {	
 	int to = 0;
 	int from = 0;
-	int to_count = 0;
+	ssize_t to_count = 0;
 	char buffer[1024];
-	int from_count = 1024;
+	ssize_t from_count = 1024;
 
 	if (argc != 3)
 	{
@@ -37,23 +37,25 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	while (from_count == 1024)
+	while ((from_count = read(from, buffer, 1024)) > 0)
 	{
-		from_count = read(from, buffer, 1024);
-		if (from_count == -1)
-		{
-			dprintf(STDERR_FILENO,
-					"Error: Can't read from file %s\n", argv[1]);
-			exit(98);
-		}
 		to_count = write(to, buffer, from_count);
 		if (to_count == -1)
 		{
 			dprintf(STDERR_FILENO,
-					"Error: Can't write to %s\n", argv[2]);
+					"Error, Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
+
+	if (from_count == -1)
+	{
+		dprintf(STDERR_FILENO,
+				"Error: Can't read from file %\n", argv[1]);
+		exit(98);
+
+	}
+
 
 	if (close(from) == -1)
 	{
