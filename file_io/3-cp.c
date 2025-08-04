@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * main - copies file content to another
  * @argc: number of arguments
@@ -7,52 +8,33 @@
  */
 
 int main(int argc, char *argv[])
-{	
-	int to, from;
-	ssize_t to_count, from_count;
+{
+	int from, to;
+	ssize_t from_count, to_count;
 	char buffer[1024];
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO,
-				"Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
 	from = open(argv[1], O_RDONLY);
 	if (from == -1)
 	{
-		dprintf(STDERR_FILENO,
-				"Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (to == -1)
 	{
-		dprintf(STDERR_FILENO,
-				"Error: Can't write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		close(from);
 		exit(99);
 	}
-
-	while (1)
+	
+	while ((from_count = read(from, buffer, 1024)) > 0)
 	{
-		from_count = read(from, buffer, 1024);
-		if (from_count == -1)
-		{
-			dprintf(STDERR_FILENO,
-					"Error: Can't read from file %s\n", argv[1]);
-			close(from);
-			close(to);
-			exit(98);
-		}
-
-		if (from_count == 0)
-		{
-			break;
-		}
-
 		to_count = write(to, buffer, from_count);
 		if (to_count == -1)
 		{
@@ -63,29 +45,13 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	/**
-	while ((from_count = read(from, buffer, 1024)) > 0)
-	{
-		to_count = write(to, buffer, from_count);
-		if (to_count == -1)
-		{
-			dprintf(STDERR_FILENO,
-					"Error: Can't write to %s\n", argv[2]);
-			close(from);
-			close(to);
-			exit(99);
-	}
-
 	if (from_count == -1)
 	{
-		dprintf(STDERR_FILENO,
-				"Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		close(from);
 		close(to);
 		exit(98);
 	}
-
-	*/ 
 
 	if (close(from) == -1)
 	{
