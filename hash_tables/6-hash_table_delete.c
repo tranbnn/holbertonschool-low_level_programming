@@ -17,15 +17,17 @@ void hash_table_delete(hash_table_t *ht)
 	}
 
 	index = 0;
+	
 	while (index < ht->size)
 	{
 		node = ht->array[index];
 		while (node != NULL)
 		{
 			daum = node->next;
-			free(node->key);
 			free(node->value);
+			free(node->key);
 			free(node);
+			
 			if (daum != NULL)
 			{
 				node = daum;
